@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "module": "commonjs",      
+    "moduleResolution": "node",
+    "outDir": "build",
+    "removeComments": true,
+    "strict": true,
+    "target": "ES2017"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}
