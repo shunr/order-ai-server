@@ -73,3 +73,6 @@ typings/
 
 # Serverless directories
 .serverless
+
+# VSCode workspace config
+.vscode
