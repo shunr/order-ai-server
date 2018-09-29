@@ -14,10 +14,11 @@ export class DB {
     });
   }
   init() {
-    return this._sequelize.sync({force: true});
+    //return this._sequelize.sync({force: true});
+    return this._sequelize.sync();
   }
   async writeItem(name: string) {
-    const item: Item = new Item({name: "test"});
+    const item: Item = new Item({name: name});
     await item.save();
   }
 }

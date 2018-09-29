@@ -10,7 +10,7 @@ let socket: SocketServer = new SocketServer(9001, '/order');
 const db: DB = new DB();
 
 db.init().then(() => {
-  db.writeItem("123");
+  db.writeItem("1234");
 }).catch((e)=>{
   console.log(e);
 });
