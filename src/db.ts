@@ -1,5 +1,5 @@
-import {Sequelize} from 'sequelize-typescript';
-import {Item} from './models/Item'
+import { Sequelize } from 'sequelize-typescript';
+import { Item } from './models/Item'
 
 export class DB {
   _sequelize: Sequelize;
@@ -14,11 +14,11 @@ export class DB {
     });
   }
   init() {
-    //return this._sequelize.sync({force: true});
-    return this._sequelize.sync();
+    return this._sequelize.sync({ force: true });
+    //return this._sequelize.sync();
   }
   async writeItem(name: string) {
-    const item: Item = new Item({name: name});
+    const item: Item = new Item({ name: name });
     await item.save();
   }
 }

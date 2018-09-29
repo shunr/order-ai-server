@@ -1,6 +1,6 @@
-const {WebhookClient} = require('dialogflow-fulfillment');
+const { WebhookClient } = require('dialogflow-fulfillment');
 import SocketServer from './socketServer';
-import {DB} from './db'
+import { DB } from './db'
 
 process.env.DEBUG = 'dialogflow:debug';
 
@@ -11,11 +11,11 @@ const db: DB = new DB();
 
 db.init().then(() => {
   db.writeItem("1234");
-}).catch((e)=>{
+}).catch((e) => {
   console.log(e);
 });
 
-function orderToString (order) {
+function orderToString(order) {
   let resp = '';
   console.log(order);
   for (let i = 0; i < order.length; i++) {

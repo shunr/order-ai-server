@@ -4,7 +4,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,
-    "module": "commonjs",      
+    "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "build",
     "removeComments": true,

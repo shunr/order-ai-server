@@ -1,4 +1,4 @@
-import {Server, OPEN} from 'ws';
+import { Server, OPEN } from 'ws';
 
 export default class SocketServer {
   _server: Server;

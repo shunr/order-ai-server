@@ -1,5 +1,5 @@
-import {Table, Column, Model, HasMany} from 'sequelize-typescript';
- 
+import { Table, Column, Model, HasMany } from 'sequelize-typescript';
+
 @Table
 export class Item extends Model<Item> {
 
