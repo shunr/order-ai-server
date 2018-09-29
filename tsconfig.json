@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "noImplicitAny": false,
     "module": "commonjs",      
     "moduleResolution": "node",
     "outDir": "build",
     "removeComments": true,
-    "strict": true,
-    "target": "ES2017"
+    "target": "ES2017",
   },
   "include": [
     "src/**/*"

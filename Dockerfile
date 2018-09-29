@@ -6,8 +6,8 @@ RUN npm install -g typescript
 
 COPY package*.json ./
 
-RUN npm install
-
 COPY . .
 
-CMD npm start
+RUN npm install
+
+CMD npm run clean && npm run build && npm start

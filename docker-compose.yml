@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  server:
+    build: .
+    volumes:
+      - .:/home/order-ai-server
+      - ~/cert:/cert
+      - /home/order-ai-server/node_modules/
+    environment:
+      SEQ_DB: orderdb
+      SEQ_USER: orderdb
+      SEQ_PASSWORD: password
+    ports:
+      - "443:443"
+      - "9001:9001"
+  db:
+    image: postgres:10
+    environment:
+      POSTGRES_USER: orderdb
+      POSTGRES_PASSWORD: password
+    volumes:
+      - /mnt/orderdb:/var/lib/postgresql/data
+    expose:
+      - "5432"
+    ports:
+    # Open DB ports to host only for dev, production should use expose only
+      - "9876:5432"
