@@ -1,18 +1,28 @@
 import express from 'express';
-import { createServer } from 'https';
 import { readFileSync } from 'fs';
+import { createServer } from 'https';
 
-const fulfillment = require('./fulfillment')
+import { DB } from './db';
+import { Generator } from './generator';
 
-const app = express();
-app.use(express.json());
+const fulfillment = require('./fulfillment');
 
-app.post('/fulfillment', fulfillment.handleRequest)
-
-const sslOptions = {
+const sslOptions: object = {
   key: readFileSync('/cert/privkey.pem'),
   cert: readFileSync('/cert/cert.pem'),
   ca: readFileSync('/cert/chain.pem')
 };
 
-createServer(sslOptions, app).listen(443);
+async function main(): Promise<void> {
+  await DB.init();
+  await DB.test();
+  console.log(await DB.getItems());
+  await Generator.setup();
+
+  const app: express.Express = express();
+  app.use(express.json());
+  app.post('/fulfillment', fulfillment.handleRequest);
+  createServer(sslOptions, app).listen(443);
+}
+
+main();
