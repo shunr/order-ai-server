@@ -1,0 +1,10 @@
+{
+  "extends": ["tslint-microsoft-contrib"],
+  "rulesDirectory": ["node_modules/tslint-microsoft-contrib"],
+  "rules": {
+      "missing-jsdoc": false,
+      "no-relative-imports": false,
+      "no-console": false,
+      "export-name": false
+  }
+}
